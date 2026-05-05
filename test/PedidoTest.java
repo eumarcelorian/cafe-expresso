@@ -16,4 +16,13 @@ public class PedidoTest {
 
         assertEquals(13.0, total);
     }
+
+    @Test
+    public void naoDevePermitirPularDiretoParaPreparo() {
+        Pedido pedido = new Pedido();
+
+        pedido.iniciarPreparo();
+
+        assertEquals(StatusPedido.PENDENTE, pedido.getStatus());
+    }
 }
