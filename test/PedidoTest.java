@@ -25,4 +25,18 @@ public class PedidoTest {
 
         assertEquals(StatusPedido.PENDENTE, pedido.getStatus());
     }
+
+    @Test
+    public void deveSeguirFluxoCompletoDoPedido() {
+        Pedido pedido = new Pedido();
+
+        pedido.pagar();
+        assertEquals(StatusPedido.PAGO, pedido.getStatus());
+
+        pedido.iniciarPreparo();
+        assertEquals(StatusPedido.EM_PREPARO, pedido.getStatus());
+
+        pedido.finalizar();
+        assertEquals(StatusPedido.FINALIZADO, pedido.getStatus());
+    }
 }
