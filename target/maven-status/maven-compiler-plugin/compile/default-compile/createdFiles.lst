@@ -1,0 +1,4 @@
+model/Pedido.class
+model/ItemPedido.class
+model/StatusPedido.class
+model/Produto.class
