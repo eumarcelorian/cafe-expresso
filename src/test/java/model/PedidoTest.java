@@ -1,3 +1,8 @@
+package model;
+
+import model.Pedido;
+import model.Produto;
+import model.StatusPedido;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
