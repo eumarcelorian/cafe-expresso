@@ -63,4 +63,13 @@ public class PedidoTest {
 
         assertEquals(StatusPedido.PAGO, pedido.getStatus());
     }
+
+    @Test
+    public void deveRetornarZeroQuandoPedidoNaoTemItens () {
+        Pedido pedido = new Pedido();
+
+        double total = pedido.calcularTotal();
+
+        assertEquals(0.0, total);
+    }
 }
