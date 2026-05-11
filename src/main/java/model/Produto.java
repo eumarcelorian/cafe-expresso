@@ -5,6 +5,10 @@ public class Produto {
     private double precoUnitario;
 
     public Produto(String nome, double precoUnitario) {
+        if (nome == null || nome.isBlank()) {
+            throw new IllegalArgumentException("Nome inválido");
+        }
+
         if (precoUnitario <= 0) {
             throw new IllegalArgumentException("Preço não pode ser negativo");
         }
