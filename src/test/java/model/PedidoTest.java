@@ -72,4 +72,27 @@ public class PedidoTest {
 
         assertEquals(0.0, total);
     }
+
+    @Test
+    public void deveProcessarPedidoCompletoCorretamente() {
+        Produto cafe = new Produto("Café", 5.0);
+        Produto pao = new Produto("Pão", 3.0);
+
+        Pedido pedido = new Pedido();
+
+        pedido.adicionarItem(cafe, 2); // 10
+        pedido.adicionarItem(pao, 1);  // 3
+
+        double total = pedido.calcularTotal();
+        assertEquals(13.0, total);
+
+        pedido.pagar();
+        assertEquals(StatusPedido.PAGO, pedido.getStatus());
+
+        pedido.iniciarPreparo();
+        assertEquals(StatusPedido.EM_PREPARO, pedido.getStatus());
+
+        pedido.finalizar();
+        assertEquals(StatusPedido.FINALIZADO, pedido.getStatus());
+    }
 }
