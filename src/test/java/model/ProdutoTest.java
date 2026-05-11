@@ -12,6 +12,7 @@ public class ProdutoTest {
         });
     }
 
+    @Test
     public void naoDevePermitirNomeVazio() {
         assertThrows(IllegalArgumentException.class, () -> {
             new Produto("", 10.0);
