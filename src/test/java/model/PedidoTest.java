@@ -53,4 +53,14 @@ public class PedidoTest {
 
         assertEquals(StatusPedido.PENDENTE, pedido.getStatus());
     }
+
+    @Test
+    public void naoDevePermitirFinalizarSemPreparo() {
+        Pedido pedido = new Pedido();
+
+        pedido.pagar();
+        pedido.finalizar();
+
+        assertEquals(StatusPedido.PAGO, pedido.getStatus());
+    }
 }
