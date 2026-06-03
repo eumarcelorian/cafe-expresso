@@ -33,9 +33,3 @@ O projeto segue práticas voltadas à qualidade de software:
 * Implementação incremental baseada em commits frequentes
 * Testes unitários para validação das funcionalidades
 * Separação clara de responsabilidades entre as classes
-
-# Tecnologias
-
-* Java
-* JUnit
-* Git & GitHub
